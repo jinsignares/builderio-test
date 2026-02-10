@@ -13,55 +13,61 @@ const FALLBACK_HOMEPAGE_CONTENT = {
     title: "Homepage",
     blocks: [
       {
+        id: "block-hero",
         component: {
           name: "Hero",
           options: {
-            title: "Connect Your Hourly Workforce",
-            subtitle: "TeamSense",
-            description: "<p>TeamSense is the text-based HR platform that connects you with your hourly employees. No apps to download, no company email required.</p>",
+            title: "Turn absence management into a <strong>productivity engine</strong>",
+            description: "Fixing absences is just the start. TeamSense delivers instant ROI through automated call-offs — building the digital connection that links every worker, workflow, and insight driving frontline productivity.",
             buttonText: "Book a Demo",
             buttonLink: "/demo",
           }
         }
       },
       {
+        id: "block-logos",
         component: {
           name: "LogoGrid",
           options: {
             headline: "TRUSTED BY INNOVATIVE COMPANIES",
             logos: [
-              { name: "Pella" },
-              { name: "HelloFresh" },
-              { name: "Lineage" },
-              { name: "Lennox" },
-              { name: "Hunter Douglas" },
+              { name: "Pella", image: "/assets/images/demo/pella-white.png" },
+              { name: "HelloFresh", image: "/assets/images/demo/hello-fresh-white.png" },
+              { name: "Saint Gobain", image: "/assets/images/demo/saint-gobain-white.png" },
+              { name: "Kenco", image: "/assets/images/demo/kenco-white.png" },
+              { name: "AAM", image: "/assets/images/demo/aam-white.png" },
             ]
           }
         }
       },
       {
+        id: "block-zpattern-1",
         component: {
           name: "ZPattern",
           options: {
             headline: "Eliminate call-off chaos",
             description: "<p>Replace your call-off hotline with a text-based system that automatically updates supervisors and logs attendance.</p>",
             imagePosition: "right",
-            backgroundColor: "white"
+            backgroundColor: "white",
+            image: "/assets/images/homepage/absent-sms-bkg.png"
           }
         }
       },
       {
+        id: "block-zpattern-2",
         component: {
           name: "ZPattern",
           options: {
             headline: "Engage your entire team",
             description: "<p>Send company announcements, safety updates, and pulse surveys directly to employee phones via text.</p>",
             imagePosition: "left",
-            backgroundColor: "gray"
+            backgroundColor: "gray",
+            image: "/assets/images/homepage/absence-manager-bkg.png"
           }
         }
       },
       {
+        id: "block-features",
         component: {
           name: "FeatureCards",
           options: {
@@ -84,6 +90,7 @@ const FALLBACK_HOMEPAGE_CONTENT = {
         }
       },
       {
+        id: "block-testimonials",
         component: {
           name: "Testimonials",
           options: {

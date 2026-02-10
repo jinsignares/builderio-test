@@ -1,25 +1,110 @@
 @import "tailwindcss";
 
-:root {
-  --background: #f5faf8;
-  --foreground: #171717;
-  --primary-green: #2D5A5A;
+@theme {
   --font-urbanist: 'Urbanist', sans-serif;
+
+  /* Brand Colors */
+  --color-primary-green: #2D5A5A;
+
+  /* Brand Teals */
+  --color-brand-teal-10: #0A2C29;
+  --color-brand-teal-20: #0E3F3A;
+  --color-brand-teal-30: #145851;
+  --color-brand-teal-40: #1C7E74;
+  --color-brand-teal-50: #60A59E;
+  --color-brand-teal-52: #6CACA5;
+  --color-brand-teal-55: #8EC0BA;
+  --color-brand-teal-60: #9EC9C4;
+  --color-brand-teal-70: #BFDBD8;
+  --color-brand-teal-80: #DFEDEC;
+  --color-brand-teal-90: #EFF6F5;
+
+  /* Brand Golds */
+  --color-brand-gold-10: #946E16;
+  --color-brand-gold-20: #C5921E;
+  --color-brand-gold-30: #e0ab30;
+  --color-brand-gold-40: #df9e09;
+  --color-brand-gold-50: #F6B725;
+  --color-brand-gold-80: #fbdf9d;
+  --color-brand-gold-83: #FCE9BE;
+  --color-brand-gold-90: #FEF8E9;
+  --color-muted-gold: #d0a647;
+
+  /* Brand Corals */
+  --color-brand-coral-20: #B8561C;
+  --color-brand-coral-50: #F67225;
+  --color-brand-coral-80: #FDE3D3;
+
+  /* Brand Grays */
+  --color-brand-gray-20: #343737;
+  --color-brand-gray-40: #767E7D;
+  --color-brand-gray-45: #767e7d;
+  --color-brand-gray-50: #949E9C;
+  --color-brand-gray-70: #BFC5C4;
+  --color-brand-gray-80: #DFE2E1;
+  --color-brand-gray-82: #F4F6F6;
+  --color-brand-gray-87: #EBEBEB80;
+  --color-brand-gray-85: #ECEEEE;
+  --color-brand-gray-88: #F7F7F7;
+  --color-brand-gray-90: #FAFAFA;
+
+  /* UI Colors */
+  --color-ui-blue-20: #0031A3;
+  --color-ui-blue-50: #5C8DFF;
+  --color-ui-berry-20: #0800A3;
+  --color-ui-berry-80: #EFEFFF;
+  --color-ui-ocean-20: #0B5B4D;
+  --color-ui-ocean-80: #E0F6F2;
+  --color-ui-green-20: #0B5B19;
+  --color-ui-grape-50: #BC4CF0;
+
+  /* Aliases & UX Colors */
+  --color-brand-dark-brown: #944416;
+  --color-brand-teal: #487F78;
+  --color-brand-dark-teal: #0E3F3A;
+  --color-brand-light-teal: #BFDBD8;
+  --color-brand-light-teal-bkg: #EFF6F5;
+  --color-brand-bright-teal: #EFF6F5;
+  --color-brand-gold: #C5921E;
+  --color-brand-light-gold: #FEF8E9;
+
+  --color-ui-gray: #6F7B79;
+  --color-ui-light-gray: #EEF0F0;
+  --color-ui-lighter-gray: #F9F9F9;
+  --color-ui-dark-gray: #303635;
+  --color-ui-dark-blue: #051441;
+  --color-ui-darker-blue: #141418;
+  --color-ui-light-blue: #eaf1ff;
+  --color-ui-orange: #FE7B20;
+  --color-ui-dark-orange: #896206;
+  --color-ui-dark-green: #44716b;
+  --color-ui-light-green: #dff7eb;
+  --color-ui-green: #175b18;
+
+  --color-brand-yellow: #F6B725;
+  --color-brand-red: #BF4B08;
+  --color-brand-dark-red: #AD0000;
+  --color-error-red: #fc6868;
+  --color-light-border-color: #c4c4c4;
+  --color-dark-border-color: #808080;
+  --color-input-gray: #c0c7c6;
+
+  /* Entry Type Colors */
+  --color-pastel-purple: #F8EBFF;
+  --color-pastel-orange: #FDEBE3;
+  --color-pastel-pink: #FEECF4;
+  --color-pastel-coral: #FDE2D3;
+  --color-pastel-yellow: #FFFBD0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary-green: var(--primary-green);
-  --font-sans: var(--font-urbanist);
+:root {
+  /* Default background to Dark Green (brand-teal-10) to match homepage */
+  --background: #0A2C29;
+  --foreground: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Remove dark mode override to enforce brand consistency */
+/* @media (prefers-color-scheme: dark) { ... } */
 
 body {
   background: var(--background);

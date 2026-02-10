@@ -1,0 +1,120 @@
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  /* Increased from 441px to match responsive behavior */
+  aspect-ratio: 16 / 9;
+  /* Changed to match the wrapper aspect ratio in SCSS */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step1 {
+  position: absolute;
+  width: 60%;
+  /* Adjusted to be relative to container width, similar to 441px/720px */
+  aspect-ratio: 441 / 326;
+  background-image: url('/assets/images/homepage/1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: visible;
+  /* Centering */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: absolute;
+  width: auto;
+  height: auto;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  max-width: none;
+  /* Allow images to exceed their natural size if needed */
+}
+
+/* Positioning values derived from homepage.scss variables */
+/* Using percentages relative to the .step1 container size */
+
+.step2 {
+  top: -24%;
+  left: -22%;
+  width: 47%;
+  /* 207px / 441px */
+  animation-delay: 1s;
+}
+
+.step3 {
+  top: 6%;
+  left: -24%;
+  width: 47%;
+  /* 208px / 441px */
+  animation-delay: 2.5s;
+}
+
+.step4 {
+  top: 58%;
+  left: -8%;
+  width: 47%;
+  /* 209px / 441px */
+  animation-delay: 4s;
+}
+
+.step5_1 {
+  top: 32%;
+  left: 27%;
+  width: 81%;
+  /* 357px / 441px */
+  animation-delay: 5.5s;
+}
+
+.step5_2 {
+  top: 5%;
+  left: 27%;
+  width: 81%;
+  animation-delay: 6s;
+}
+
+.step5_3 {
+  top: -26%;
+  left: 29%;
+  width: 81%;
+  animation-delay: 6.5s;
+}
+
+.step5_4 {
+  top: 12%;
+  left: 54%;
+  width: 52%;
+  /* 231px / 441px */
+  animation-delay: 7s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    aspect-ratio: 1;
+    /* More square on mobile */
+  }
+
+  .step1 {
+    width: 80%;
+  }
+}

@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
+import { SMSAnimation } from './SMSAnimation';
 
 interface HeroProps {
-  title: string;
+  title?: string;
   subtitle?: string;
   description?: string;
   buttonText?: string;
@@ -11,52 +12,65 @@ interface HeroProps {
 }
 
 export function Hero({
-  title = 'Attendance Management Software',
-  subtitle = 'TeamSense',
-  description = '<p>TeamSense simplifies workforce management with text-based communication, attendance tracking, and HRIS integration—no apps needed.</p>',
+  title = 'Turn absence management into a <strong>productivity engine</strong>',
+  subtitle,
+  description = 'Fixing absences is just the start. TeamSense delivers instant ROI through automated call-offs — building the digital connection that links every worker, workflow, and insight driving frontline productivity.',
   buttonText = 'Book a Demo',
   buttonLink = '/demo',
   image,
 }: HeroProps) {
   return (
-    <section className="bg-primary-green text-white py-16 md:py-24">
-      <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+    <section className="bg-brand-teal-10 text-white py-16 md:py-24 font-urbanist">
+      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col gap-6">
           <div>
-            {subtitle && (
-              <h2 className="text-xl md:text-2xl font-semibold opacity-90 mb-2">{subtitle}</h2>
-            )}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">{title}</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight" 
+                dangerouslySetInnerHTML={{ __html: title.replace('<strong>', '<strong class="text-brand-gold-50">') }} 
+            />
           </div>
           
           {description && (
-            <div className="text-lg md:text-xl opacity-90 max-w-xl" dangerouslySetInnerHTML={{ __html: description }} />
+            <div className="text-lg md:text-xl opacity-90 max-w-xl leading-relaxed" dangerouslySetInnerHTML={{ __html: description }} />
           )}
 
-          {buttonText && (
-            <div className="mt-4">
+          <div className="flex flex-wrap gap-4 mt-4">
+             {/* Button 1 */}
               <a
                 href={buttonLink || '#'}
-                className="inline-block bg-white text-primary-green px-8 py-3 rounded-md font-bold text-lg hover:bg-gray-100 transition shadow-lg"
+                className="inline-block bg-brand-gold-50 text-brand-teal-20 px-8 py-4 rounded-md font-bold text-lg hover:bg-brand-gold-20 hover:text-white transition shadow-lg"
               >
                 {buttonText}
               </a>
-            </div>
-          )}
+              
+              {/* Button 2 */}
+              <a
+                href="/roi-calculator"
+                className="inline-block bg-brand-teal-40 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-brand-teal-30 transition shadow-lg"
+              >
+                Calculate your ROI
+              </a>
+          </div>
+
+           {/* Footer Text */}
+           <p className="text-white font-bold text-sm md:text-base mt-4 max-w-lg">
+             Employees call off by text — no app, no training. Supervisors get instant visibility, HR gets clean data, and production keeps moving.
+           </p>
+
         </div>
 
-        <div className="relative aspect-video w-full rounded-lg overflow-hidden shadow-2xl bg-white/10 flex items-center justify-center">
+        <div className="relative w-full flex items-center justify-center">
           {image ? (
-            <Image 
-              src={image} 
-              alt={title} 
-              fill 
-              className="object-cover"
-            />
+            <div className="relative aspect-video w-full rounded-lg overflow-hidden shadow-2xl bg-white/10">
+              <Image 
+                src={image} 
+                alt="Hero Image" 
+                fill 
+                className="object-cover"
+              />
+            </div>
           ) : (
-            <div className="text-center p-8">
-              <p className="text-white/60 italic">Animation/Image Placeholder</p>
-              <p className="text-sm text-white/40 mt-2">Add an image in Builder.io</p>
+            <div className="w-full">
+              <SMSAnimation />
             </div>
           )}
         </div>
@@ -64,4 +78,3 @@ export function Hero({
     </section>
   );
 }
-
